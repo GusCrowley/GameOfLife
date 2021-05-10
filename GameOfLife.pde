@@ -52,11 +52,28 @@ public void keyPressed() {
     running= !running;
   }
   if (key == 'g') {
-    NUM_ROWS++;
-    NUM_COLS++;
+    ++NUM_ROWS;
+    ++NUM_COLS;
     setup();
     //this kinda works :) 
     //it gets funky at least
+  }
+  if (key == 's') {
+    --NUM_ROWS;
+    --NUM_COLS;
+    setup();
+    //this kinda works :) 
+    //it gets funky at least
+  }
+  if (key == 'x') {
+    for (int NUM_ROWS= 0; NUM_ROWS< 20; NUM_ROWS++) {
+      for (int NUM_COLS= 0; NUM_COLS< 20; NUM_COLS++) {
+        buttons [NUM_ROWS] [NUM_COLS].setLife(false);
+      }
+    }
+  }
+  if (key == 'p') {
+    setup();
   }
 }
 
